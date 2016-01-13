@@ -1,0 +1,247 @@
+.header
+	position: relative
+	padding-top: 45px 
+	z-index: 3
+	+clr
+	&__left
+		float: left
+	&__logo
+		display: inline-block
+		vertical-align: top
+		width: 206px
+		height: 56px
+		background: url("/img/header-logo.png") no-repeat
+		font-size: 0
+		line-height: 1
+		background-size: cover 
+		+r(480)
+			width: 150px 
+			height: 41px 
+	&__right	
+		float: right
+		margin-right: 30px 
+		margin-top: 15px 
+		&.is-menu-open
+			// margin-top: -45px 
+			.header__menu-btn
+				border-bottom: 1px solid #ffbc64
+				margin-right: 0
+				+r(1200)
+					margin-right: 120px
+				+r(767)
+					margin-right: 80px 
+				.menu__title
+					position: absolute
+					top: -2px 
+					left: 35px 
+					z-index: 10 					
+					display: inline-block
+					font-size: 15px 
+					text-transform: uppercase 
+					color: #777f84
+	&__lang, &__menu
+		display: inline-block
+		vertical-align: top
+	&__lang
+		&.is-hidden
+			display: none 
+		margin-right: 50px 
+		+r(320)
+			display: none
+		ul
+			font-size: 0 
+		li
+			display: inline-block
+			margin-right: 15px 
+			+semi
+			font-size: 15px
+			color: #a38256 
+			text-transform: uppercase 
+			cursor: pointer
+			&:last-child
+				margin-right: 0 
+		.is-active
+			color: #fff 
+	&__menu-btn
+		position: relative
+		display: inline-block
+		margin-bottom: 25px 
+		border-bottom: 1px solid #ffbc64
+		+box
+
+
+// MENU
+.header__menu
+	position: absolute
+.header__menu.is-open
+	top: 0
+	right: -122px
+	width: 400px 
+	min-height: 850px
+	padding: 100px 70px 60px 
+	text-align: right 
+	background: #1C2932  
+	+r(1200)
+		width: 330px
+		right: 0 
+		min-height: 0 
+	+r(767)
+		padding: 100px 30px 30px 
+		min-height: 0 
+	+r(480)
+		width: 250px 
+	.menu__list
+		margin-bottom: 30px 
+		padding-top: 13px 
+		padding-bottom: 48px 
+		border-bottom: 1px solid #2e3a42
+		border-top: 1px solid #2e3a42
+		+r(767)
+			margin-bottom: 0
+			padding-bottom: 0
+			border-bottom: none
+		+r(320)
+			margin-bottom: 30px 
+			padding-bottom: 30px 
+			border-bottom: 1px solid #2e3a42
+	.menu__link
+		font-size: 15px 
+		line-height: 40px 
+		color: #FFF 
+		text-decoration: none
+		+tr(0.1s)
+		&:hover
+			text-shadow: 0px 2px 10px white
+	.menu__lang
+		@extend .header__lang
+		margin-right: 0
+		margin-bottom: 30px  
+		+r(767)
+			display: none
+		+r(320)
+			display: block
+	.menu__socials
+		margin-bottom: 30px
+		font-size: 0
+		+r(767)
+			display: none
+	.menu__social
+		display: inline-block
+		margin-right: 5px 
+		cursor: pointer
+		&:last-child
+			margin-right: 0
+		&:hover
+			opacity: 0.7
+		&.fb		
+			+s(menu_fb)
+		&.tw
+			+s(menu_tw)
+		&.in
+			+s(menu_in)
+	.menu__copyrights
+		font-size: 13px
+		color: #49545B 
+		+r(767)
+			display: none
+		
+.menu__list, 
+.menu__link, 
+.menu__footer
+	font-size: 0 
+.menu__title
+	display: none 
+.menu__toggle
+	position: absolute 
+	top: -5px 
+	display: block
+	width: 32px 
+	height: 27px 
+	margin: 0
+	padding: 0
+	overflow: hidden
+	font-size: 0
+	text-indent: -9999px  
+	background: none  
+	-webkit-appearance: none 
+	-moz-appearance: none 
+	appearance: none 
+	-webkit-box-shadow: none 
+	box-shadow: none 
+	-webkit-border-radius: none 
+	border-radius: none 
+	border: none 
+	cursor: pointer
+	+tr(0.3s)
+	z-index: 10
+	.is-open &
+		top: -4px 
+		right: 50px
+	&:focus
+		outline:none
+	&:hover
+		span
+			&:before
+				top: -10px 
+			&:after
+				bottom: -10px 
+	&.is-active
+		span
+			background: none 
+			&:before, &:after
+				-webkit-transition-delay: 0s, 0.3s	 
+				-moz-transition-delay: 0s, 0.3s	 
+				-ms-transition-delay: 0s, 0.3s	 
+				-o-transition-delay: 0s, 0.3s	 
+				transition-delay: 0s, 0.3s	
+			&:before
+				top: 0
+				+rotate(45) 
+			&:after
+				bottom: 0
+				+rotate(-45) 
+	span
+		position: absolute
+		display: block
+		top: 12px 
+		left: 5px 
+		right: 5px 
+		height: 3px 
+		background: #FFF 
+		-webkit-border-radius: 3px 
+		border-radius: 3px 
+		+tr(background 0s 0.3s)
+		&:before, &:after
+			content: "" 
+			position: absolute
+			display: block
+			left: 0
+			width: 100% 
+			height: 3px 
+			background: #FFF 
+			-webkit-border-radius: 3px 
+			border-radius: 3px
+			-webkit-transition-duration: 0.3s, 0.3s 
+			-moz-transition-duration: 0.3s, 0.3s 
+			-ms-transition-duration: 0.3s, 0.3s 
+			-o-transition-duration: 0.3s, 0.3s 
+			transition-duration: 0.3s, 0.3s 
+			-webkit-transition-delay: 0.3s, 0s 
+			-moz-transition-delay: 0.3s, 0s 
+			-ms-transition-delay: 0.3s, 0s 
+			-o-transition-delay: 0.3s, 0s 
+			transition-delay: 0.3s, 0s  
+		&:before
+			top: -7px 
+			-webkit-transition-property: top, -webkit-transform 
+			-moz-transition-property: top, -moz-transform 
+			-ms-transition-property: top, -ms-transform 
+			-o-transition-property: top, -o-transform 
+			transition-property: top, transform 
+		&:after
+			bottom: -7px 
+			-webkit-transition-property: bottom, -webkit-transform 
+			-moz-transition-property: bottom, -moz-transform 
+			-ms-transition-property: bottom, -ms-transform 
+			-o-transition-property: bottom, -o-transform 
+			transition-property: bottom, transform 

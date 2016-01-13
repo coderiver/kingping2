@@ -1,6 +1,13 @@
 $icons: (0:0)
-$icons: map-merge($icons,(codedby: (X: 0px, Y:-9px, W: 47px, H: 5px, TW: 49px, TH: 14px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(coderiver: (X: 0px, Y:0px, W: 49px, H: 5px, TW: 49px, TH: 14px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(codedby: (X: -36px, Y:-91px, W: 47px, H: 5px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(coderiver: (X: -36px, Y:-82px, W: 49px, H: 5px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(footer-fb: (X: 0px, Y:0px, W: 42px, H: 42px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(footer-in: (X: -46px, Y:0px, W: 42px, H: 42px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(in: (X: 0px, Y:-46px, W: 32px, H: 32px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(mail: (X: -36px, Y:-46px, W: 32px, H: 32px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(menu_fb: (X: -92px, Y:0px, W: 32px, H: 32px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(menu_in: (X: -92px, Y:-36px, W: 32px, H: 32px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(menu_tw: (X: 0px, Y:-82px, W: 32px, H: 32px, TW: 124px, TH: 114px, IMG: '../img/icons.png')))
 
 
 // Gets an attribute from the sass map
@@ -36,16 +43,72 @@ $icons: map-merge($icons,(coderiver: (X: 0px, Y:0px, W: 49px, H: 5px, TW: 49px, 
 @mixin sr($i)
 	+sprite-retina($i)	
 
+=svg($name, $width, $height)
+	background: url("../img/svg/#{$name}.svg") no-repeat 0 0
+	//background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg'); // to switches sprites to base64, elegant
+	+bg-size(#{$width}px #{$height}px)
+	width: #{$width}px
+	height: #{$height}px
+	display: inline-block
+
+=svgi($name, $width, $height)
+	background: url("../img/svg/#{$name}.svg") no-repeat 0 0
+	//background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg'); // to switches sprites to base64, elegant
+	+bg-size(#{$width}px #{$height}px)
+
+
 //
 //.icon-codedby
 //	width: 47px
 //	height: 5px
 //	background-image: url('../img/icons.png')
-//	background-position: 0px -9px
+//	background-position: -36px -91px
 //
 //.icon-coderiver
 //	width: 49px
 //	height: 5px
 //	background-image: url('../img/icons.png')
+//	background-position: -36px -82px
+//
+//.icon-footer-fb
+//	width: 42px
+//	height: 42px
+//	background-image: url('../img/icons.png')
 //	background-position: 0px 0px
+//
+//.icon-footer-in
+//	width: 42px
+//	height: 42px
+//	background-image: url('../img/icons.png')
+//	background-position: -46px 0px
+//
+//.icon-in
+//	width: 32px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -46px
+//
+//.icon-mail
+//	width: 32px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: -36px -46px
+//
+//.icon-menu_fb
+//	width: 32px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: -92px 0px
+//
+//.icon-menu_in
+//	width: 32px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: -92px -36px
+//
+//.icon-menu_tw
+//	width: 32px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -82px
 //

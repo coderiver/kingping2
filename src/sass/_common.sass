@@ -28,9 +28,128 @@
 // =book
 // 	font-family: "book", Arial, sans-serif
 
+// breackpoint
+=r1
+	@media only screen and (max-width: "980px")
+		@content
+=r2
+	@media only screen and (max-width: "768px")
+		@content
+
 body
-	font-family: Arial, sans-serif
-	font-size: 12px
+	+reg
+	font-size: 15px
+	font-weight: normal 
 	line-height: 1.4
-	
+
+
+//reset
+h1, h2, h3, h4, h5, h6, b, strong
+	font-weight: normal
+a
+	text-decoration: none
+
+
 // common blocks
+
+.out
+	min-width: 320px 
+	overflow: hidden 
+%in
+	position: relative
+	height: 100%
+	max-width: 940px 
+	margin: 0 auto 
+	padding: 0 10px 
+	+r(767)
+		max-width: 400px 
+.btn
+	display: block 
+	width: 227px
+	height: 57px
+	border: 3px solid #fdb352
+	background: none 
+	overflow: hidden 
+	+tr(all .2s linear)
+	font-size: 14px
+	color: #fff 
+	text-transform: uppercase 
+	+bold
+	+box
+	cursor: pointer
+	&.btn_transparent:hover
+		background: #fdb352 
+	&.btn_perl
+		margin: 0 auto 
+		border: 3px solid #F6A79F
+		background: #F6A79F 
+		&:hover
+			opacity: .7 
+	&.btn_grey
+		margin: 0 auto 
+		border: 3px solid #b4bdc5
+		background: #b4bdc5 
+		&:hover
+			opacity: .7 
+.header-center
+	max-width: 400px
+	margin: 0 auto 
+	text-align: center
+	.description
+		font-size: 15px 
+		color: #777F84 
+.title
+	height: 49px 
+	line-height: 49px 
+	margin: 0 auto 
+	margin-bottom: 22px
+	+bold 
+	font-size: 20px
+	text-transform: uppercase
+	&.is-black
+		color: #000 
+	&.is-white
+		color: #FFF 
+	&.title_bg
+		background: url("/img/pricing-plains_bg.png") no-repeat
+		-webkit-background-size: contain 
+		-o-background-size: contain 
+		background-size: contain 
+		background-position: 50% 50%   
+.is-left
+	float: left
+.is-right
+	float: right
+	color: #777f84
+	
+
+.field
+	position: relative
+	text-align: left
+	&:before
+		position: absolute
+		bottom: 0
+		left: 50%
+		right: 50%
+		height: 4px
+		background: #f06c5f
+		transition: all 0.5s ease
+		content: "" 
+	&.is-active
+		&:before
+			left: 0
+			right: 0
+	.input
+		font-size: 16px
+		color: #777f84
+		+reg
+		background: none
+		width: 100%
+		border: none
+		border-bottom: 4px solid #d2d4d6 
+		padding: 16px 0 
+		placeholder-color: #fff
+	textarea
+		&.input
+			height: 55px
+			resize: none
