@@ -2,13 +2,13 @@
 
 .toparea
 	position: relative
-	min-height: 850px  
+	min-height: 100vh  
 	+box
 	z-index: 0
 	+r(480)
 		min-height: 480px 
 	&_bg
-		position: absolute
+		position: absolute 
 		top: 0
 		bottom: 0
 		left: 0
@@ -28,21 +28,15 @@
 		// left: 10px 
 		// z-index: 2 І
 	&__content
-		position: absolute
+		position: relative
 		z-index: 2
 		max-width: 960px
-		padding: 150px 10px 150px
+		padding: 150px 10px 100px
 		margin: 0 auto  
-		top: 50%
-		left: 10px
-		transform: translate(-50%, -50%)
 		+r(980)
-			padding: 150px 10px 70px 
+			padding: 150px 10px 10	0px 
 			max-width: 800px
 			position: relative
-			top: auto
-			left: auto
-			transform: translate(0 0)
 		+r(767)
 			top: 0 
 			max-width: 400px

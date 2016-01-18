@@ -22,7 +22,6 @@
 		margin-right: 30px 
 		margin-top: 15px 
 		&.is-menu-open
-			// margin-top: -45px 
 			.header__menu-btn
 				border-bottom: 1px solid #ffbc64
 				margin-right: 0
@@ -71,31 +70,39 @@
 
 
 // MENU
+.header__menu-bg
+	position: absolute
+	top: 0
+	right: 0
+	width: 0  
+	height: 0 
+	background: #1C2932  
+	-webkit-border-radius: 50% 
+	border-radius: 50% 
+	z-index: -1 
+	transform: translate(50%, -40%)
+	.header__menu.is-open &
+		width: 200vh
+		height: 200vh
+		+tr(all 0.5s linear)
 .header__menu
 	position: absolute
-.header__menu.is-open
 	top: 0
 	right: -122px
 	width: 400px 
-	min-height: 850px
+	min-height: 100vh
 	padding: 100px 70px 60px 
-	text-align: right 
-	background: #1C2932  
-	+r(1200)
-		width: 330px
-		right: 0 
-		min-height: 0 
-	+r(767)
-		padding: 100px 30px 30px 
-		min-height: 0 
-	+r(480)
-		width: 250px 
+	text-align: right  
+	overflow: hidden
+	visibility: hidden
+	z-index: -1
+	opacity: 0 
 	.menu__list
 		margin-bottom: 30px 
 		padding-top: 13px 
 		padding-bottom: 48px 
-		border-bottom: 1px solid #2e3a42
-		border-top: 1px solid #2e3a42
+		border-top: 1px solid transparent
+		border-bottom: 1px solid transparent
 		+r(767)
 			margin-bottom: 0
 			padding-bottom: 0
@@ -105,23 +112,25 @@
 			padding-bottom: 30px 
 			border-bottom: 1px solid #2e3a42
 	.menu__link
+		position: relative
+		display: inline-block
+		margin-bottom: 0px 
+		padding-bottom: 7px 
 		font-size: 15px 
-		line-height: 40px 
+		line-height: 1 
 		color: #FFF 
 		text-decoration: none
-		+tr(0.1s)
-		&:hover
-			text-shadow: 0px 2px 10px white
+		
 	.menu__lang
 		@extend .header__lang
 		margin-right: 0
-		margin-bottom: 30px  
+		margin-bottom: 0
 		+r(767)
 			display: none
 		+r(320)
 			display: block
 	.menu__socials
-		margin-bottom: 30px
+		margin-bottom: 0
 		font-size: 0
 		+r(767)
 			display: none
@@ -144,7 +153,47 @@
 		color: #49545B 
 		+r(767)
 			display: none
-		
+
+.header__menu.is-open
+	visibility: visible
+	z-index: 1
+	opacity: 1 
+	+tr(all 0.5s)
+	+r(1200)
+		width: 330px
+		right: 0 
+		min-height: 0 
+	+r(767)
+		padding: 100px 30px 30px 
+		min-height: 0 
+	+r(480)
+		width: 250px 
+	.menu__link
+		margin-bottom: 18px
+		+tr(margin-bottom .5s)
+		&:after
+			content: ""
+			position: absolute
+			display: block
+			right: 0
+			bottom: 0
+			height: 1px
+			width: 0
+			background: transparent
+			transition: width .3s ease, background-color .3s ease
+		&:hover:after
+			width: 100% 
+			background: #FFF 
+	.menu__list
+		border-color: #2e3a42 
+		transition: border-top-color 0.1s 0.1s, border-bottom-color 0.25s 0.3s
+	.menu__lang,
+	.menu__socials 
+		margin-bottom: 30px 
+	.menu__lang,
+	.menu__socials,
+	.menu__copyrights
+		transition: all .2s .2s
 .menu__list, 
 .menu__link, 
 .menu__footer
