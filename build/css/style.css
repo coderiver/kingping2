@@ -119,10 +119,10 @@ a { text-decoration: none; }
 
 .gl-market { position: relative; -webkit-box-sizing: border-box; box-sizing: border-box; z-index: 0; }
 .gl-market__top { position: relative; min-height: 890px; }
-.gl-market_bg { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; background: url("../img/kingping_gl.jpg"); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; z-index: 0; }
+.gl-market_bg { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; background-color: #1c2932; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; z-index: 0; }
 .gl-market__content { padding-top: 100px; text-align: center; }
 .gl-market__title { margin-bottom: 50px; font-size: 31px; line-height: auto; color: #FFF; text-transform: uppercase; }
-.gl-market__descr { font-size: 15px; line-height: 25px; color: #FFF; }
+.gl-market__descr { font-size: 15px; line-height: 25px; color: #FFF; margin-bottom: 100px; }
 .gl-market__bottom { padding: 60px 0; background: #19252e; *zoom: 1; }
 .gl-market__bottom:after { content: " "; display: table; clear: both; }
 .gl-market__bottom p { float: left; width: 70%; color: #fff; font-size: 19px; text-align: left; letter-spacing: 0.2px; }
@@ -283,6 +283,47 @@ a { text-decoration: none; }
 
 .js-visibility { -webkit-transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, -webkit-transform 0.4s 0.2s; transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s; visibility: hidden; opacity: 0; -webkit-transform: matrix(0.9, 0, 0, 0.9, 0, 0); -ms-transform: matrix(0.9, 0, 0, 0.9, 0, 0); transform: matrix(0.9, 0, 0, 0.9, 0, 0); }
 .js-visibility.is-visible { visibility: visible; opacity: 1; -webkit-transform: matrix(1, 0, 0, 1, 0, 0); -ms-transform: matrix(1, 0, 0, 1, 0, 0); transform: matrix(1, 0, 0, 1, 0, 0); }
+
+@-webkit-keyframes bigwave { 0% { top: 0px; left: 0px; right: 0px; bottom: 0px; opacity: 0.1; }
+  40% { opacity: 0.1; }
+  100% { top: -123px; left: -123px; right: -123px; bottom: -123px; opacity: 0; } }
+
+@keyframes bigwave { 0% { top: 0px; left: 0px; right: 0px; bottom: 0px; opacity: 0.1; }
+  40% { opacity: 0.1; }
+  100% { top: -123px; left: -123px; right: -123px; bottom: -123px; opacity: 0; } }
+@-webkit-keyframes logos { 0% { -webkit-box-shadow: none; box-shadow: none; }
+  35% { opacity: 1; }
+  40% { -webkit-box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); opacity: 0.5; }
+  65% { opacity: 0; -webkit-box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); }
+  66% { opacity: 1; -webkit-box-shadow: none; box-shadow: none; }
+  100% { -webkit-box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); } }
+@keyframes logos { 0% { -webkit-box-shadow: none; box-shadow: none; }
+  35% { opacity: 1; }
+  40% { -webkit-box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); opacity: 0.5; }
+  65% { opacity: 0; -webkit-box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); }
+  66% { opacity: 1; -webkit-box-shadow: none; box-shadow: none; }
+  100% { -webkit-box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); } }
+.gm-logos { width: 890px; height: 380px; position: relative; margin: 0 auto; }
+.gm-logos__box { position: absolute; -webkit-border-radius: 50%; border-radius: 50%; background-color: #1c2932; }
+.gm-logos__box img { display: inline-block; vertical-align: middle; }
+.gm-logos__main { width: 297px; height: 297px; top: 3px; left: 50%; margin-left: -149px; -webkit-box-shadow: none; box-shadow: none; border: none; }
+.gm-logos__main.is-visible .gm-logos__main-circles:before { -webkit-animation: bigwave 3s infinite linear; animation: bigwave 3s infinite linear; }
+.gm-logos__main.is-visible .gm-logos__main-circles:after { -webkit-animation: bigwave 3s 1.5s infinite linear; animation: bigwave 3s 1.5s infinite linear; }
+.gm-logos__main-center, .gm-logos__main-circles { position: absolute; top: 0; right: 0; bottom: 0; left: 0; -webkit-border-radius: 50%; border-radius: 50%; }
+.gm-logos__main-center { text-align: center; font-size: 0; border: 7px solid #627787; z-index: 1; background-color: #1c2932; }
+.gm-logos__main-center:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.gm-logos__main img { width: 142px; }
+.gm-logos__main-circles { -webkit-box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.1); box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.1); }
+.gm-logos__main-circles:before, .gm-logos__main-circles:after { position: absolute; content: ""; -webkit-border-radius: 50%; border-radius: 50%; opacity: 0.1; background-color: #627787; top: 0; left: 0; right: 0; bottom: 0; }
+.gm-logos__kronet, .gm-logos__convertlab, .gm-logos__mobinizer, .gm-logos__china, .gm-logos__mobiheads { border: 5px solid #627787; text-align: center; font-size: 0; z-index: 3; }
+.gm-logos__kronet:before, .gm-logos__convertlab:before, .gm-logos__mobinizer:before, .gm-logos__china:before, .gm-logos__mobiheads:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.gm-logos__kronet:after, .gm-logos__convertlab:after, .gm-logos__mobinizer:after, .gm-logos__china:after, .gm-logos__mobiheads:after { position: absolute; top: -5px; bottom: -5px; left: -5px; right: -5px; -webkit-border-radius: 50%; border-radius: 50%; content: ""; }
+.gm-logos__kronet.is-visible:after, .gm-logos__convertlab.is-visible:after, .gm-logos__mobinizer.is-visible:after, .gm-logos__china.is-visible:after, .gm-logos__mobiheads.is-visible:after { -webkit-animation: logos 1.8s 1 forwards linear; animation: logos 1.8s 1 forwards linear; }
+.gm-logos__kronet { top: 0; left: 115px; width: 94px; height: 94px; }
+.gm-logos__convertlab { top: 6px; right: 112px; width: 132px; height: 132px; }
+.gm-logos__mobinizer { left: 94px; bottom: 25px; width: 148px; height: 148px; }
+.gm-logos__china { right: 205px; bottom: 0; width: 92px; height: 92px; }
+.gm-logos__mobiheads { right: 0; bottom: 48px; width: 127px; height: 127px; }
 
 .header { position: relative; padding-top: 45px; z-index: 3; *zoom: 1; }
 .header:after { content: " "; display: table; clear: both; }

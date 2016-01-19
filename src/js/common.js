@@ -68,12 +68,87 @@ $(document).ready(function() {
 	});
 
 
-$('.js-nav a').on('click', function() {
+	$('.js-nav a').on('click', function() {
         var section = $(this).attr('href');
         $('html, body').animate({
             scrollTop: $(section).offset().top - 10
         }, 500);
         return false;
     });
+
+    //animation
+
+    	//globalMarket
+
+
+	$('.js-gm').each(function() {
+
+		var item = $(this)
+			itemTop = item.offset(),
+			itemHeight = item.outerHeight(),
+			itemLogo = item.find('.js-gm-item[data-animation="logo"]'),
+			itemFirst = item.find('.js-gm-item[data-animation="gmfirst"]'),
+			itemSecond = item.find('.js-gm-item[data-animation="gmsecond"]'),
+			itemThird = item.find('.js-gm-item[data-animation="gmthird"]');
+
+		function gmMain() {
+			itemLogo.addClass('is-visible');
+		}
+		function gmFirst() {
+			itemFirst.addClass('is-visible');
+		}
+		function gmSecond() {
+			itemSecond.addClass('is-visible');
+		}
+		function gmThird() {
+			itemThird.addClass('is-visible');
+		}
+
+		var globalMarket = new TimelineMax({ paused: true });
+
+		globalMarket
+			.fromTo(itemLogo, 0.7, {
+				scale: 0.5,
+				opacity: 0
+			}, {
+				scale: 1,
+				opacity: 1,
+			})
+			.add(gmMain)
+			.fromTo(itemFirst, 0.6, {
+				scale: 0.5,
+				opacity: 0
+			}, {
+				scale: 1,
+				opacity: 1
+			})
+			.add(gmFirst, "-=0.2")
+			.fromTo(itemSecond, 0.6, {
+				scale: 0.5,
+				opacity: 0
+			}, {
+				scale: 1,
+				opacity: 1
+			})
+			.add(gmSecond, "-=0.2")
+			.fromTo(itemThird, 0.6, {
+				scale: 0.5,
+				opacity: 0
+			}, {
+				scale: 1,
+				opacity: 1
+			})
+			.add(gmThird, "-=0.2");
+
+		$(window).scroll(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+
+			if (windowTop + windowHeight >= itemTop.top + (itemHeight/2)) {
+				globalMarket.play();
+			};
+		});
+	});
+
  
 });
