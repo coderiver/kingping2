@@ -132,6 +132,47 @@ $(document).ready(function() {
 			itemSecond = item.find('.js-gm-item[data-animation="gmsecond"]'),
 			itemThird = item.find('.js-gm-item[data-animation="gmthird"]');
 
+		//arrows
+		var arrChina = $('.js-arr-china'),
+			arrChinaOne = arrChina.find('.js-path[data-id="1"]'),
+			arrChinaTwo = arrChina.find('.js-path[data-id="2"]'),
+			arrChinaThree = arrChina.find('.js-path[data-id="3"]'),
+			arrChinaFour = arrChina.find('.js-path[data-id="4"]');
+
+		var arrKronet = $('.js-arr-kronet'),
+			arrKronetOne = arrKronet.find('.js-path[data-id="1"]'),
+			arrKronetTwo = arrKronet.find('.js-path[data-id="2"]'),
+			arrKronetThree = arrKronet.find('.js-path[data-id="3"]'),
+			arrKronetFour = arrKronet.find('.js-path[data-id="4"]'),
+			arrKronetFive = arrKronet.find('.js-path[data-id="5"]'),
+			arrKronetSix = arrKronet.find('.js-path[data-id="6"]');
+
+		var arrMobinizer = $('.js-arr-mobinizer'),
+			arrMobinizerOne = arrMobinizer.find('.js-path[data-id="1"]'),
+			arrMobinizerTwo = arrMobinizer.find('.js-path[data-id="2"]'),
+			arrMobinizerThree = arrMobinizer.find('.js-path[data-id="3"]'),
+			arrMobinizerFour = arrMobinizer.find('.js-path[data-id="4"]'),
+			arrMobinizerFive = arrMobinizer.find('.js-path[data-id="5"]');
+
+		var arrConvert = $('.js-arr-convertlab'),
+			arrConvertOne = arrConvert.find('.js-path[data-id="1"]'),
+			arrConvertTwo = arrConvert.find('.js-path[data-id="2"]'),
+			arrConvertThree = arrConvert.find('.js-path[data-id="3"]'),
+			arrConvertFour = arrConvert.find('.js-path[data-id="4"]');
+
+		var arrMobi = $('.js-arr-mobi'),
+			arrMobiOne = arrMobi.find('.js-path[data-id="1"]'),
+			arrMobiTwo = arrMobi.find('.js-path[data-id="2"]'),
+			arrMobiThree = arrMobi.find('.js-path[data-id="3"]'),
+			arrMobiFour = arrMobi.find('.js-path[data-id="4"]'),
+			arrMobiFive = arrMobi.find('.js-path[data-id="5"]'),
+			arrMobiSix = arrMobi.find('.js-path[data-id="6"]'),
+			arrMobiSeven = arrMobi.find('.js-path[data-id="7"]'),
+			arrMobiEight = arrMobi.find('.js-path[data-id="8"]'),
+			arrMobiNine = arrMobi.find('.js-path[data-id="9"]'),
+			arrMobiTen = arrMobi.find('.js-path[data-id="10"]'),
+			arrMobiEleven = arrMobi.find('.js-path[data-id="11"]');
+
 		function gmMain() {
 			itemLogo.addClass('is-visible');
 		}
@@ -156,6 +197,14 @@ $(document).ready(function() {
 				opacity: 1,
 			})
 			.add(gmMain)
+			.staggerFrom([arrChinaOne, arrChinaTwo, arrChinaThree, arrChinaFour], 0.2,
+			{
+				opacity: 0
+			}, 0.1)
+			.staggerFrom([arrKronetOne, arrKronetTwo, arrKronetThree, arrKronetFour, arrKronetFive, arrKronetSix], 0.1,
+			{
+				opacity: 0
+			}, 0.1, "-=0.6")
 			.fromTo(itemFirst, 0.6, {
 				scale: 0.5,
 				opacity: 0
@@ -164,6 +213,14 @@ $(document).ready(function() {
 				opacity: 1
 			})
 			.add(gmFirst, "-=0.2")
+			.staggerFrom([arrMobinizerOne, arrMobinizerTwo, arrMobinizerThree, arrMobinizerFour, arrMobinizerFive], 0.1,
+			{
+				opacity: 0
+			}, 0.1)
+			.staggerFrom([arrConvertOne, arrConvertTwo, arrConvertThree, arrConvertFour], 0.1,
+			{
+				opacity: 0
+			}, 0.1, "-=0.4")
 			.fromTo(itemSecond, 0.6, {
 				scale: 0.5,
 				opacity: 0
@@ -172,6 +229,10 @@ $(document).ready(function() {
 				opacity: 1
 			})
 			.add(gmSecond, "-=0.2")
+			.staggerFrom([arrMobiOne, arrMobiTwo, arrMobiThree, arrMobiFour, arrMobiFive, arrMobiSix, arrMobiSeven, arrMobiEight, arrMobiNine, arrMobiTen, arrMobiEleven], 0.03,
+			{
+				opacity: 0
+			}, 0.05)
 			.fromTo(itemThird, 0.6, {
 				scale: 0.5,
 				opacity: 0
@@ -189,7 +250,83 @@ $(document).ready(function() {
 				globalMarket.play();
 			};
 		});
+		$(window).load(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+
+			if (windowTop + windowHeight >= itemTop.top + (itemHeight/2)) {
+				globalMarket.play();
+			};
+		});
 	});
 
+	//smart tds
+
+	$('.js-smart').each(function() {
+		var item = $(this)
+			smartTop = item.offset(),
+			smartHeight = item.outerHeight();
+
+		//ppls
+
+		var pplOne = item.find('.js-smart-man[data-id="1"]'),
+			pplTwo = item.find('.js-smart-man[data-id="2"]'),
+			pplThree = item.find('.js-smart-man[data-id="3"]');
+
+		//arrs
+		var arrOne = item.find('.js-path[data-id="1"]'),
+			arrTwo = item.find('.js-path[data-id="2"]'),
+			arrThree = item.find('.js-path[data-id="3"]'),
+			arrFour = item.find('.js-path[data-id="4"]'),
+			arrFive = item.find('.js-path[data-id="5"]'),
+			arrSix = item.find('.js-path[data-id="6"]'),
+			arrSeven = item.find('.js-path[data-id="7"]');
+
+		//server box
+		var boxOne = item.find('.js-smart-box[data-id="1"]'),
+			boxTwo = item.find('.js-smart-box[data-id="2"]'),
+			boxThree = item.find('.js-smart-box[data-id="3"]'),
+			boxFour = item.find('.js-smart-box[data-id="4"]');
+
+		function serverClass() {
+			item.addClass('is-visible');
+			setTimeout(function() {
+				item.find('.js-server').attr('fill', '#E0E4E7');
+			}, 1200);			
+		}
+
+		var smart = new TimelineMax({ paused: true });
+
+		smart
+			.staggerFrom([pplOne, pplTwo, pplThree], 0.5,
+			{
+				opacity: 0
+			}, 0.3)
+			.staggerFrom([arrOne, arrTwo, arrThree, arrFour, arrFive, arrSix, arrSeven], 0.2,
+			{
+				opacity: 0
+			}, 0.1)
+			.add(serverClass)
+			.staggerFrom([boxOne, boxTwo, boxThree, boxFour], 0.3,
+			{
+				opacity: 0
+			}, 0.3, "+=1");
+
+		$(window).scroll(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+
+			if (windowTop + windowHeight >= smartTop.top + (smartHeight/2)) {
+				smart.play();
+			};
+		});
+		$(window).load(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+			if (windowTop + windowHeight >= smartTop.top + (smartHeight/2)) {
+				smart.play();
+			};
+		});
+	});
  
 });

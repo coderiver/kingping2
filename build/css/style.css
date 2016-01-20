@@ -56,7 +56,7 @@ a { text-decoration: none; }
 .title { height: 49px; line-height: 49px; margin: 0 auto; margin-bottom: 22px; font-family: "GothamPro Bold", Arial, sans-serif; font-size: 20px; text-transform: uppercase; }
 .title.is-black { color: #000; }
 .title.is-white { color: #FFF; }
-.title.title_bg { background: url("/img/pricing-plains_bg.png") no-repeat; background-size: contain; background-position: 50% 50%; }
+.title.title_bg { background: url("../img/pricing-plains_bg.png") no-repeat; background-size: contain; background-position: 50% 50%; }
 
 .is-left { float: left; }
 
@@ -119,7 +119,7 @@ a { text-decoration: none; }
 
 .gl-market { position: relative; -webkit-box-sizing: border-box; box-sizing: border-box; z-index: 0; }
 .gl-market__top { position: relative; min-height: 890px; }
-.gl-market_bg { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; background-color: #1c2932; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; z-index: 0; }
+.gl-market_bg { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; background: url("../img/map.png"); background-color: #1c2932; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; z-index: 0; }
 .gl-market__content { padding-top: 100px; text-align: center; }
 .gl-market__title { margin-bottom: 50px; font-size: 31px; line-height: auto; color: #FFF; text-transform: uppercase; }
 .gl-market__descr { font-size: 15px; line-height: 25px; color: #FFF; margin-bottom: 100px; }
@@ -324,7 +324,36 @@ a { text-decoration: none; }
 .gm-logos__mobinizer { left: 94px; bottom: 25px; width: 148px; height: 148px; }
 .gm-logos__china { right: 205px; bottom: 0; width: 92px; height: 92px; }
 .gm-logos__mobiheads { right: 0; bottom: 48px; width: 127px; height: 127px; }
+.gm-logos__arrs li { position: absolute; }
+.gm-logos__arrs li .arr-kronet { width: 102px; height: 43px; }
+.gm-logos__arrs li .arr-convertlab { width: 64px; height: 27px; }
+.gm-logos__arrs li .arr-china { width: 55px; height: 50px; }
+.gm-logos__arrs li .arr-mobi { width: 182px; height: 59px; }
+.gm-logos__arrs li .arr-mobinizer { width: 79px; height: 39px; }
+.gm-logos__arrs li svg path { fill: #627787; }
+.gm-logos__arrs-kronet { left: 203px; top: 67px; }
+.gm-logos__arrs-convertlab { top: 90px; right: 239px; }
+.gm-logos__arrs-china { right: 284px; bottom: 71px; }
+.gm-logos__arrs-mobi { bottom: 118px; right: 124px; }
+.gm-logos__arrs-mobinizer { bottom: 115px; left: 238px; }
 
+.smart.is-visible .smart__container { -webkit-animation: dash 4s linear forwards; animation: dash 4s linear forwards; }
+.smart__face { fill: #FFFFFF; stroke: #A1ADB7; stroke-width: 3; stroke-linejoin: round; }
+.smart__arrs { fill: #C0C9CF; }
+.smart__counter-arr { fill: #F3897F; }
+.smart__counter-in { fill: #FFFFFF; }
+.smart__counter-circle { fill: #A1ADB7; }
+.smart__server-box { fill: #FFFFFF; }
+.smart__server circle { fill: #A1ADB7; fill-opacity: 0; stroke: #A1ADB7; stroke-width: 4; stroke-linejoin: round; }
+.smart__server-line { fill: #C0C9CF; }
+.smart__server-dots { fill: #A1ADB7; }
+.smart__container { stroke-dashoffset: 2000; stroke-dasharray: 2000; stroke: #627787; stroke-width: 4; stroke-linejoin: round; -webkit-transition: fill 0.4s 1s; transition: fill 0.4s 1s; }
+
+@-webkit-keyframes dash { from { stroke-dashoffset: 2000; }
+  to { stroke-dashoffset: 0; } }
+
+@keyframes dash { from { stroke-dashoffset: 2000; }
+  to { stroke-dashoffset: 0; } }
 .header { position: relative; padding-top: 45px; z-index: 3; *zoom: 1; }
 .header:after { content: " "; display: table; clear: both; }
 .header__left { float: left; }

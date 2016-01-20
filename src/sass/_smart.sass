@@ -1,0 +1,49 @@
+.smart
+	&.is-visible
+		.smart
+			&__container
+				animation: dash 4s linear forwards
+				// fill: #E0E4E7
+	&__face
+		fill: #FFFFFF
+		stroke: #A1ADB7
+		stroke-width: 3
+		stroke-linejoin: round
+	&__arrs
+		fill: #C0C9CF
+	&__counter
+		&-arr
+			fill: #F3897F
+		&-in
+			fill: #FFFFFF
+		&-circle
+			fill: #A1ADB7
+	&__server
+		&-box
+			fill: #FFFFFF
+		circle
+			fill: #A1ADB7
+			fill-opacity: 0
+			stroke: #A1ADB7
+			stroke-width: 4
+			stroke-linejoin: round
+		&-line
+			fill: #C0C9CF
+		&-dots
+			fill: #A1ADB7
+	&__container
+		stroke-dashoffset: 2000
+		stroke-dasharray: 2000
+		// fill: none
+		stroke: #627787
+		stroke-width: 4
+		stroke-linejoin: round
+		transition: fill 0.4s 1s
+
+
+@keyframes dash
+	from 
+		stroke-dashoffset: 2000
+
+	to 
+		stroke-dashoffset: 0
