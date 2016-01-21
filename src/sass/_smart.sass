@@ -1,14 +1,9 @@
 .smart
+	position: relative
 	&.is-visible
 		.smart
 			&__container
 				animation: dash 4s linear forwards
-				// fill: #E0E4E7
-	&__face
-		fill: #FFFFFF
-		stroke: #A1ADB7
-		stroke-width: 3
-		stroke-linejoin: round
 	&__arrs
 		fill: #C0C9CF
 	&__counter
@@ -22,28 +17,144 @@
 		&-box
 			fill: #FFFFFF
 		circle
-			fill: #A1ADB7
 			fill-opacity: 0
 			stroke: #A1ADB7
-			stroke-width: 4
-			stroke-linejoin: round
 		&-line
 			fill: #C0C9CF
-		&-dots
+		&-dots, circle
 			fill: #A1ADB7
 	&__container
 		stroke-dashoffset: 2000
 		stroke-dasharray: 2000
-		// fill: none
 		stroke: #627787
+	&__container, &__server circle
 		stroke-width: 4
+	&__face
+		fill: #FFFFFF
+	&__body
+		fill: #E0E4E7
+	&__neck
+		fill: #C0C9CF
+	&__container, &__body, &__server circle, &__face
 		stroke-linejoin: round
-		transition: fill 0.4s 1s
-
-
+	&__face, &__body
+		stroke: #A1ADB7
+		stroke-width: 3
+		
+.chart
+	position: absolute
+	top: 44px
+	right: 14px
+	width: 137px
+	height: 148px
+	&__graph
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+	&__item
+		position: absolute
+	&__line
+		width: 30px
+		position: absolute
+		width: 0
+		overflow: hidden
+		&:before
+			content: "" 
+			position: absolute
+			bottom: 2px
+			left: 2px
+			height: 3px
+			background: #A1ADB7 
+		&[data-id="1"]
+			height: 31px
+			top: 41px
+			left: 8px
+			&:before
+				width: 41px
+				transform: rotate(-39deg)
+				transform-origin: bottom left
+		&[data-id="2"]
+			height: 13px
+			top: 40px
+			left: 46px
+			&:before
+				width: 32px
+				transform: rotate(14deg)
+				transform-origin: top right
+		&[data-id="3"]
+			height: 23px
+			top: 29px
+			left: 84px
+			&:before
+				width: 29px
+				transform: rotate(-39deg)
+				transform-origin: bottom left
+	&__circle
+		width: 11px
+		height: 11px
+		border: 3px solid #b0bac3
+		border-radius: 50%
+		&[data-id="1"]
+			top: 66px
+			left: 0
+		&[data-id="2"]
+			top: 36px
+			left: 39px
+		&[data-id="3"]
+			top: 45px
+			left: 77px
+	&__card
+		width: 39px
+		height: 29px
+		border-radius: 5px
+		background: #e0e4e7 
+		top: -4px
+		left: 24px
+		border-top: 7px solid #c0c9cf 
+		&:after
+			+arr(10, 5, #e0e4e7, b)
+			position: absolute
+			top: 100%
+			left: 50%
+			margin-left: -5px
+			content: "" 
+	&__cols, &__rows
+		+clr
+		position: absolute
+		left: -2px
+		right: -1px
+		font-size: 0 
+	&__cols
+		bottom: 13px
+	&__col, &__row
+		display: inline-block
+		vertical-align: bottom
+	&__col
+		width: 23px
+		height: 0
+		margin: 0 3px 0 2px
+		background: #e0e4e7 
+		border-radius: 3px
+	&__rows
+		bottom: 0
+	&__row
+		width: 11px
+		height: 4px
+		margin: 0 9px 0 8px
+		background: #c0c9cf
+		border-radius: 3px
+	&__money
+		width: 36px
+		height: 36px
+		position: absolute
+		top: 0
+		right: -5px
+		svg
+			width: 100%
+			height: 100%
 @keyframes dash
 	from 
 		stroke-dashoffset: 2000
-
 	to 
 		stroke-dashoffset: 0

@@ -288,12 +288,51 @@ $(document).ready(function() {
 			boxThree = item.find('.js-smart-box[data-id="3"]'),
 			boxFour = item.find('.js-smart-box[data-id="4"]');
 
+
 		function serverClass() {
 			item.addClass('is-visible');
 			setTimeout(function() {
 				item.find('.js-server').attr('fill', '#E0E4E7');
 			}, 1200);			
 		}
+
+		//counter
+		var counter = item.find('.js-smart-counter');
+
+		//chart
+		var circleOne = item.find('.js-chart-circle[data-id="1"]'),
+			circleTwo = item.find('.js-chart-circle[data-id="2"]'),
+			circleThree = item.find('.js-chart-circle[data-id="3"]');
+
+		var lineOne = item.find('.js-chart-line[data-id="1"]'),
+			lineTwo = item.find('.js-chart-line[data-id="2"]'),
+			lineThree = item.find('.js-chart-line[data-id="3"]');
+
+		var chartCard = item.find('.js-chart-card');
+
+		var lineOneWidth = lineOne.data('width'),
+			lineTwoWidth = lineTwo.data('width'),
+			lineThreeWidth = lineThree.data('width');
+
+		var rowOne = item.find('.js-chart-row[data-id="1"]'),
+			rowTwo = item.find('.js-chart-row[data-id="2"]'),
+			rowThree = item.find('.js-chart-row[data-id="3"]'),
+			rowFour = item.find('.js-chart-row[data-id="4"]'),
+			rowFive = item.find('.js-chart-row[data-id="5"]');
+
+		var colOne = item.find('.js-chart-col[data-id="1"]'),
+			colTwo = item.find('.js-chart-col[data-id="2"]'),
+			colThree = item.find('.js-chart-col[data-id="3"]'),
+			colFour = item.find('.js-chart-col[data-id="4"]'),
+			colFive = item.find('.js-chart-col[data-id="5"]');
+
+		var colOneHeight = colOne.data('height'),
+			colTwoHeight = colTwo.data('height'),
+			colThreeHeight = colThree.data('height'),
+			colFourHeight = colFour.data('height'),
+			colFiveHeight = colFive.data('height');
+
+		var chartMoney = item.find('.js-chart-money');
 
 		var smart = new TimelineMax({ paused: true });
 
@@ -310,8 +349,66 @@ $(document).ready(function() {
 			.staggerFrom([boxOne, boxTwo, boxThree, boxFour], 0.3,
 			{
 				opacity: 0
-			}, 0.3, "+=1");
-
+			}, 0.2, "+=1.3")
+			.from(counter, 0.5, {
+				opacity: 0
+			})
+			.from(circleOne, 0.2, {
+				opacity: 0
+			})
+			.to(lineOne, 0.3, {
+				width: lineOneWidth
+			}, "-=0.15")
+			.from(circleTwo, 0.2, {
+				opacity: 0
+			})
+			.to(lineTwo, 0.3, {
+				width: lineTwoWidth
+			}, "-=0.15")
+			.from(circleThree, 0.2, {
+				opacity: 0
+			})
+			.to(lineThree, 0.3, {
+				width: lineThreeWidth
+			}, "-=0.15")
+			.from(chartCard, 0.3, {
+				opacity: 0,
+				y: -10
+			}, "-=0.7")
+			.from(rowOne, 0.1, {
+				opacity: 0
+			}, "-=1")
+			.to(colOne, 0.3, {
+				height: colOneHeight
+			}, "-=0.8")
+			.from(rowTwo, 0.1, {
+				opacity: 0
+			}, "-=0.8")
+			.to(colTwo, 0.3, {
+				height: colTwoHeight
+			}, "-=0.5")
+			.from(rowThree, 0.1, {
+				opacity: 0
+			}, "-=0.5")
+			.to(colThree, 0.3, {
+				height: colThreeHeight
+			}, "-=0.2")
+			.from(rowFour, 0.1, {
+				opacity: 0
+			}, "-=0.2")
+			.to(colFour, 0.3, {
+				height: colFourHeight
+			})
+			.from(rowFive, 0.1, {
+				opacity: 0
+			})
+			.to(colFive, 0.3, {
+				height: colFiveHeight
+			})
+			.from(chartMoney, 0.3, {
+				opacity: 0,
+				y: -15
+			}, "-=0.3");
 		$(window).scroll(function() {
 			var windowTop = $(window).scrollTop(),
 				windowHeight = $(window).height();

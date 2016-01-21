@@ -337,17 +337,50 @@ a { text-decoration: none; }
 .gm-logos__arrs-mobi { bottom: 118px; right: 124px; }
 .gm-logos__arrs-mobinizer { bottom: 115px; left: 238px; }
 
+.smart { position: relative; }
 .smart.is-visible .smart__container { -webkit-animation: dash 4s linear forwards; animation: dash 4s linear forwards; }
-.smart__face { fill: #FFFFFF; stroke: #A1ADB7; stroke-width: 3; stroke-linejoin: round; }
 .smart__arrs { fill: #C0C9CF; }
 .smart__counter-arr { fill: #F3897F; }
 .smart__counter-in { fill: #FFFFFF; }
 .smart__counter-circle { fill: #A1ADB7; }
 .smart__server-box { fill: #FFFFFF; }
-.smart__server circle { fill: #A1ADB7; fill-opacity: 0; stroke: #A1ADB7; stroke-width: 4; stroke-linejoin: round; }
+.smart__server circle { fill-opacity: 0; stroke: #A1ADB7; }
 .smart__server-line { fill: #C0C9CF; }
-.smart__server-dots { fill: #A1ADB7; }
-.smart__container { stroke-dashoffset: 2000; stroke-dasharray: 2000; stroke: #627787; stroke-width: 4; stroke-linejoin: round; -webkit-transition: fill 0.4s 1s; transition: fill 0.4s 1s; }
+.smart__server-dots, .smart__server circle { fill: #A1ADB7; }
+.smart__container { stroke-dashoffset: 2000; stroke-dasharray: 2000; stroke: #627787; }
+.smart__container, .smart__server circle { stroke-width: 4; }
+.smart__face { fill: #FFFFFF; }
+.smart__body { fill: #E0E4E7; }
+.smart__neck { fill: #C0C9CF; }
+.smart__container, .smart__body, .smart__server circle, .smart__face { stroke-linejoin: round; }
+.smart__face, .smart__body { stroke: #A1ADB7; stroke-width: 3; }
+
+.chart { position: absolute; top: 44px; right: 14px; width: 137px; height: 148px; }
+.chart__graph { position: absolute; top: 0; left: 0; right: 0; }
+.chart__item { position: absolute; }
+.chart__line { width: 30px; position: absolute; width: 0; overflow: hidden; }
+.chart__line:before { content: ""; position: absolute; bottom: 2px; left: 2px; height: 3px; background: #A1ADB7; }
+.chart__line[data-id="1"] { height: 31px; top: 41px; left: 8px; }
+.chart__line[data-id="1"]:before { width: 41px; -webkit-transform: rotate(-39deg); -ms-transform: rotate(-39deg); transform: rotate(-39deg); -webkit-transform-origin: bottom left; -ms-transform-origin: bottom left; transform-origin: bottom left; }
+.chart__line[data-id="2"] { height: 13px; top: 40px; left: 46px; }
+.chart__line[data-id="2"]:before { width: 32px; -webkit-transform: rotate(14deg); -ms-transform: rotate(14deg); transform: rotate(14deg); -webkit-transform-origin: top right; -ms-transform-origin: top right; transform-origin: top right; }
+.chart__line[data-id="3"] { height: 23px; top: 29px; left: 84px; }
+.chart__line[data-id="3"]:before { width: 29px; -webkit-transform: rotate(-39deg); -ms-transform: rotate(-39deg); transform: rotate(-39deg); -webkit-transform-origin: bottom left; -ms-transform-origin: bottom left; transform-origin: bottom left; }
+.chart__circle { width: 11px; height: 11px; border: 3px solid #b0bac3; -webkit-border-radius: 50%; border-radius: 50%; }
+.chart__circle[data-id="1"] { top: 66px; left: 0; }
+.chart__circle[data-id="2"] { top: 36px; left: 39px; }
+.chart__circle[data-id="3"] { top: 45px; left: 77px; }
+.chart__card { width: 39px; height: 29px; -webkit-border-radius: 5px; border-radius: 5px; background: #e0e4e7; top: -4px; left: 24px; border-top: 7px solid #c0c9cf; }
+.chart__card:after { width: 0px; height: 0px; border-style: solid; border-width: 5px 5px 0 5px; border-color: #e0e4e7 transparent transparent transparent; position: absolute; top: 100%; left: 50%; margin-left: -5px; content: ""; }
+.chart__cols, .chart__rows { *zoom: 1; position: absolute; left: -2px; right: -1px; font-size: 0; }
+.chart__cols:after, .chart__rows:after { content: " "; display: table; clear: both; }
+.chart__cols { bottom: 13px; }
+.chart__col, .chart__row { display: inline-block; vertical-align: bottom; }
+.chart__col { width: 23px; height: 0; margin: 0 3px 0 2px; background: #e0e4e7; -webkit-border-radius: 3px; border-radius: 3px; }
+.chart__rows { bottom: 0; }
+.chart__row { width: 11px; height: 4px; margin: 0 9px 0 8px; background: #c0c9cf; -webkit-border-radius: 3px; border-radius: 3px; }
+.chart__money { width: 36px; height: 36px; position: absolute; top: 0; right: -5px; }
+.chart__money svg { width: 100%; height: 100%; }
 
 @-webkit-keyframes dash { from { stroke-dashoffset: 2000; }
   to { stroke-dashoffset: 0; } }
