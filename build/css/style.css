@@ -304,6 +304,7 @@ a { text-decoration: none; }
   66% { opacity: 1; -webkit-box-shadow: none; box-shadow: none; }
   100% { -webkit-box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); box-shadow: 0 0 0 15px rgba(98, 119, 135, 0.1); } }
 .gm-logos { width: 890px; height: 380px; position: relative; margin: 0 auto; }
+.gm-logos:before { position: absolute; top: 50%; left: 50%; margin: -245px 0 0 -491px; width: 982px; height: 490px; background: url(../img/gm-bg.png) no-repeat center center; content: ""; }
 .gm-logos__box { position: absolute; -webkit-border-radius: 50%; border-radius: 50%; background-color: #1c2932; }
 .gm-logos__box img { display: inline-block; vertical-align: middle; }
 .gm-logos__main { width: 297px; height: 297px; top: 3px; left: 50%; margin-left: -149px; -webkit-box-shadow: none; box-shadow: none; border: none; }
