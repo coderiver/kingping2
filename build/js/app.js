@@ -299,6 +299,12 @@ $(document).ready(function() {
 		//counter
 		var counter = item.find('.js-smart-counter');
 
+		var counterArr = item.find('.js-smart-arr');
+
+		function rotateArr() {
+			$('.js-smart-arr').addClass('is-visible');
+		}
+
 		//chart
 		var circleOne = item.find('.js-chart-circle[data-id="1"]'),
 			circleTwo = item.find('.js-chart-circle[data-id="2"]'),
@@ -353,6 +359,9 @@ $(document).ready(function() {
 			.from(counter, 0.5, {
 				opacity: 0
 			})
+			.from(counterArr, 0.3, {
+				opacity: 0
+			}, "-=0.2")
 			.from(circleOne, 0.2, {
 				opacity: 0
 			})
@@ -408,7 +417,9 @@ $(document).ready(function() {
 			.from(chartMoney, 0.3, {
 				opacity: 0,
 				y: -15
-			}, "-=0.3");
+			}, "-=0.3")
+			.add(rotateArr);
+			
 		$(window).scroll(function() {
 			var windowTop = $(window).scrollTop(),
 				windowHeight = $(window).height();
