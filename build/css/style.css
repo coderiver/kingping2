@@ -338,7 +338,7 @@ a { text-decoration: none; }
 .gm-logos__arrs-mobi { bottom: 118px; right: 124px; }
 .gm-logos__arrs-mobinizer { bottom: 115px; left: 238px; }
 
-.smart { position: relative; }
+.smart { position: relative; width: 460px; height: 235px; }
 .smart.is-visible .smart__container { -webkit-animation: dash 4s linear forwards; animation: dash 4s linear forwards; }
 .smart__arrs { fill: #C0C9CF; }
 .smart__counter-arr { fill: #F3897F; }
