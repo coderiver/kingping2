@@ -495,11 +495,11 @@ $(document).ready(function() {
 		rotator
 			.staggerFrom([rotatorOne, rotatorTwo, rotatorThree], 0.5, {
 				opacity: 0
-			}, 0.5, 1)
+			}, 0.3, 1)
 			.add(rotatorBtns)
 			.staggerFrom([phoneOne, phoneTwo, phoneThree, phoneFour, phoneArr], 0.3, {
 				opacity: 0
-			}, 0.5)
+			}, 0.2)
 			.add(rotatePhone, "-=0.2");
 
 		$(window).scroll(function() {
@@ -515,6 +515,93 @@ $(document).ready(function() {
 				windowHeight = $(window).height();
 			if (windowTop + windowHeight >= rotatorTop.top + (rotatorHeight/2)) {
 				rotator.play();
+			};
+		});
+
+	});
+
+
+	$('.js-campaign').each(function() {
+		var item = $(this),
+			campaignTop = item.offset();
+			campaignHeight = item.outerHeight();
+
+		//rotate arrs
+		var arrOne = item.find('.js-campaign-rotate');
+
+		function arrRotate() {
+			item.find('div.js-campaign-rotate').addClass('is-visible');
+		}
+
+		//path
+		var itemOne = item.find('.js-campaign-item[data-id="1"]'),
+			itemTwo = item.find('.js-campaign-item[data-id="2"]'),
+			itemThree = item.find('.js-campaign-item[data-id="3"]'),
+			itemFour = item.find('.js-campaign-item[data-id="4"]'),
+			itemFive = item.find('.js-campaign-item[data-id="5"]'),
+			itemSix = item.find('.js-campaign-item[data-id="6"]');
+
+		//laptop
+		var laptopOne = item.find('.js-campaign-laptop[data-id="1"]'),
+			laptopTwo = item.find('.js-campaign-laptop[data-id="2"]'),
+			laptopThree = item.find('.js-campaign-laptop[data-id="3"]');
+
+		var graphRed = item.find('.js-campaign-red'),
+			graphYellow = item.find('.js-campaign-yellow'),
+			graphGray = item.find('.js-campaign-gray');
+
+		//console
+		var consoleOne = item.find('.js-console-item[data-id="1"]'),
+			consoleTwo = item.find('.js-console-item[data-id="2"]'),
+			consoleThree = item.find('.js-console-item[data-id="3"]'),
+			consoleFour = item.find('.js-console-item[data-id="4"]');
+
+		//animation
+		var campaign = new TimelineMax({ paused: true });
+
+		campaign
+			.from(arrOne, 0.5, {
+				opacity: 0
+			}, 1)
+			.add(arrRotate, "-=1.5")
+			.staggerFrom([itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix], 0.2, {
+				opacity: 0
+			}, 0.05)
+			.staggerFrom([laptopOne, laptopTwo, laptopThree], 0.4, {
+				opacity: 0
+			}, 0.05)
+			.from(graphRed, 0.5, {
+				y: -10,
+				x: 10,
+				opacity: 0
+			})
+			.from(graphYellow, 0.5, {
+				y: 10,
+				x: 10,
+				opacity: 0
+			}, "-=0.5")
+			.from(graphGray, 0.5, {
+				y: 10,
+				x: -10,
+				opacity: 0
+			}, "-=0.5")
+			.staggerFrom([consoleOne, consoleTwo, consoleThree, consoleFour], 0.6, {
+				opacity: 0
+			}, 0.3);
+
+		$(window).scroll(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+
+			if (windowTop + windowHeight >= campaignTop.top + (campaignHeight/2)) {
+				campaign.play();
+			};
+		});
+		$(window).load(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+			if (windowTop + windowHeight >= campaignTop.top + (campaignHeight/2)) {
+				campaign.play();
 			};
 		});
 

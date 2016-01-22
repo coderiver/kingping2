@@ -1,0 +1,75 @@
+.campaign
+	width: 460px
+	height: 190px
+	position: relative
+	&__small-rotate
+		circle
+			fill: #F9C4BF
+	&__big-rotate
+		circle
+			fill: #F3897F
+	&__big-rotate, &__small-rotate
+		circle
+			stroke-width: 4 
+			stroke-linejoin: round
+			stroke: #627787
+	&__arr
+		fill: #C0C9CF
+	&-laptop
+		&__border
+			fill: #FFFFFF
+			stroke: #627787
+			stroke-width: 4
+			stroke-linejoin: round
+		&__btn
+			fill: #627787
+		&__bg
+			fill: #E0E4E7
+		&__list
+			fill: #fff
+		&__red
+			fill: #C65D82
+		&__yellow
+			fill: #FDC275
+		&__gray
+			fill: #A1ADB7
+	&-console
+		&__panel
+			fill: #E0E4E7
+			stroke: #A1ADB7
+			stroke-width: 3
+		&__btn
+			fill: #FFFFFF
+	&-row
+		&__green
+			fill: #AFBE96
+		&__red
+			fill: #F3897F
+		&__btn
+			fill: #FFFFFF
+		&__text
+			fill: #C0C9CF
+	&__arr
+		position: absolute
+		&.is-visible
+			animation: rotatePhone 2s linear infinite
+		path
+			fill: #fff
+		&-top, &-bottom
+			width: 19px
+			&.is-visible
+				animation-delay: 0s
+		&-top
+			top: 22px
+			left: 27px
+			&.is-visible
+				animation-delay: 0.5s
+		&-bottom
+			bottom: 17px
+			left: 26px
+		&-center
+			width: 25px
+			top: 86px
+			left: 17px
+			&.is-visible
+				animation-delay: 1s
