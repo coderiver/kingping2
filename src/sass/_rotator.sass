@@ -1,0 +1,65 @@
+.rotator
+	position: relative
+	width: 460px
+	height: 307px
+	&.is-visible
+		.rotator
+			&__animation
+				.rotator
+					&-btn
+						&__icon
+							animation: opacityPhone 2s linear infinite 
+				&[data-id="1"]
+					.rotator-btn__icon
+						animation-delay: 0.4s
+				&[data-id="2"]
+					.rotator-btn__icon
+						animation-delay: 1.2s
+				&[data-id="3"]
+					.rotator-btn__icon
+						animation-delay: 1.8s
+	&__square
+		fill: #E0E4E7
+	&-btn
+		&__bg
+			fill: #FFFFFF
+		&__border
+			fill: #A1ADB7
+		&__icon
+			fill: #627787
+	&-form
+		&__icon
+			fill: #fff
+	&-phone
+		&__bg, &__box
+			fill: #FFFFFF
+		&__border
+			fill: #627787
+		&__monitor
+			fill: #C0C9CF
+		&__circle, &__line
+			fill: #A1ADB7
+	&__arrow
+		fill: #F3897F
+	&__arr
+		width: 57px
+		height: 57px
+		position: absolute
+		top: 92px
+		left: 195px
+		transform-origin: center center
+		&.is-visible
+			animation: rotatePhone 2s linear infinite
+
+@keyframes rotatePhone
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(360deg)
+@keyframes opacityPhone
+	0%
+		opacity: 0.4
+	50%
+		opacity: 1 
+	100%
+		opacity: 0.4

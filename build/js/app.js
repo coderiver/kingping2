@@ -185,7 +185,7 @@ $(document).ready(function() {
 		function gmThird() {
 			itemThird.addClass('is-visible');
 		}
-
+		//animation
 		var globalMarket = new TimelineMax({ paused: true });
 
 		globalMarket
@@ -340,6 +340,7 @@ $(document).ready(function() {
 
 		var chartMoney = item.find('.js-chart-money');
 
+		//animation
 		var smart = new TimelineMax({ paused: true });
 
 		smart
@@ -435,6 +436,129 @@ $(document).ready(function() {
 				smart.play();
 			};
 		});
+	});
+
+	$('.js-master').each(function() {
+		var item = $(this),
+			masterTop = $(this).offset(),
+			masterHeight = $(this).outerHeight();
+
+		//laptop
+		var laptopOne = item.find('.js-laptop-item[data-id="1"]'),
+			laptopTwo = item.find('.js-laptop-item[data-id="2"]'),
+			laptopThree = item.find('.js-laptop-item[data-id="3"]');
+
+		//master path
+		var pathOne = item.find('.js-master-item[data-id="1"]'),
+			pathTwo = item.find('.js-master-item[data-id="2"]'),
+			pathThree = item.find('.js-master-item[data-id="3"]'),
+			pathFour = item.find('.js-master-item[data-id="4"]'),
+			pathFive = item.find('.js-master-item[data-id="5"]'),
+			pathSix = item.find('.js-master-item[data-id="6"]'),
+			pathSeven = item.find('.js-master-item[data-id="7"]'),
+			pathEight = item.find('.js-master-item[data-id="8"]'),
+			pathNine = item.find('.js-master-item[data-id="9"]'),
+			pathTen = item.find('.js-master-item[data-id="10"]'),
+			pathEleven = item.find('.js-master-item[data-id="11"]'),
+			pathTwelve = item.find('.js-master-item[data-id="12"]'),
+			pathThirteen = item.find('.js-master-item[data-id="13"]'),
+			pathFourteen = item.find('.js-master-item[data-id="14"]'),
+			pathFifteen = item.find('.js-master-item[data-id="15"]');
+		//master money
+		var money = item.find('.js-master-money');
+
+		//animation
+		var master = new TimelineMax({ paused: true });
+
+		master
+			.staggerFrom([laptopOne, laptopTwo, laptopThree], 0.5, {
+				opacity: 0
+			}, 0.4, 1)
+			.staggerFrom([pathOne, pathTwo, pathThree, pathFour, pathFive], 0.2, {
+				opacity: 0
+			}, 0.05)
+			.staggerFrom([pathSix, pathSeven, pathEight], 0.4, {
+				opacity: 0
+			}, 0.2)
+			.staggerFrom([pathNine, pathTen, pathEleven, pathTwelve, pathThirteen, pathFourteen, pathFifteen], 0.2, {
+				opacity: 0
+			}, 0.05, "-=0.8")
+			.from(money, 0.3, {
+				opacity: 0
+			});
+
+		$(window).scroll(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+
+			if (windowTop + windowHeight >= masterTop.top + (masterHeight/2)) {
+				master.play();
+			};
+		});
+		$(window).load(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+			if (windowTop + windowHeight >= masterTop.top + (masterHeight/2)) {
+				master.play();
+			};
+		});
+	});
+
+
+	$('.js-rotator').each(function() {
+		var item = $(this),
+			rotatorTop = item.offset();
+			rotatorHeight = item.outerHeight();
+
+		//items
+		var rotatorOne = item.find('.js-rotator-item[data-id="1"]'),
+			rotatorTwo = item.find('.js-rotator-item[data-id="2"]'),
+			rotatorThree = item.find('.js-rotator-item[data-id="3"]');
+		//phone
+		var phoneOne = item.find('.js-rotator-phone[data-id="1"]'),
+			phoneTwo = item.find('.js-rotator-phone[data-id="2"]'),
+			phoneThree = item.find('.js-rotator-phone[data-id="3"]'),
+			phoneFour = item.find('.js-rotator-phone[data-id="4"]'),
+			phoneArr = item.find('.js-rotator-arr');
+
+		function rotatePhone() {
+			phoneArr.addClass('is-visible');
+		}
+		//btn animation
+
+		function rotatorBtns() {
+			item.addClass('is-visible');
+		}
+
+		//animation
+		var rotator = new TimelineMax({ paused: true });
+
+		rotator
+			.staggerFrom([rotatorOne, rotatorTwo, rotatorThree], 0.5, {
+				opacity: 0
+			}, 0.5, 1)
+			.add(rotatorBtns)
+			.staggerFrom([phoneOne, phoneTwo, phoneThree, phoneFour, phoneArr], 0.3, {
+				opacity: 0
+			}, 0.5)
+			.add(rotatePhone, "-=0.2");
+
+		$(window).scroll(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+
+			if (windowTop + windowHeight >= rotatorTop.top + (rotatorHeight/2)) {
+				rotator.play();
+			};
+		});
+		$(window).load(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+			if (windowTop + windowHeight >= rotatorTop.top + (rotatorHeight/2)) {
+				rotator.play();
+			};
+		});
+
 	});
  
 });

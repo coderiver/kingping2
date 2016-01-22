@@ -399,6 +399,55 @@ a { text-decoration: none; }
   50% { -webkit-transform: rotate(75deg); transform: rotate(75deg); }
   60% { -webkit-transform: rotate(75deg); transform: rotate(75deg); }
   90% { -webkit-transform: rotate(0); transform: rotate(0); } }
+.master { width: 500px; height: 300px; }
+.master__text, .master__border, .master__notem .master__lines, .master__coin { fill-rule: evenodd; }
+.master__text, .master__border { fill: #fff; }
+.master__circle { fill: #c0c9cf; }
+.master__border { stroke: #e0e4e7; stroke-linejoin: round; stroke-width: 4px; }
+.master__note { fill: #afbe96; }
+.master__coin, .master__small-coin { fill: #fed197; }
+.master__lines { fill: #e0e4e7; }
+
+.laptop__border, .laptop__checkbox, .laptop__arr { fill-rule: evenodd; }
+.laptop__border { stroke: #627787; fill: #fff; stroke-linejoin: round; stroke-width: 4px; }
+.laptop__btn { fill: #627787; }
+.laptop__monitor { fill: #e0e4e7; }
+.laptop__list { fill: #fff; }
+.laptop__link { fill: #a1adb7; }
+.laptop__row { fill: #e0e4e7; }
+.laptop__check { fill: #f3897f; }
+.laptop__checkbox { fill: #fff; }
+.laptop__circle, .laptop__arr { fill: #c0c9cf; }
+
+.rotator { position: relative; width: 460px; height: 307px; }
+.rotator.is-visible .rotator__animation .rotator-btn__icon { -webkit-animation: opacityPhone 2s linear infinite; animation: opacityPhone 2s linear infinite; }
+.rotator.is-visible .rotator__animation[data-id="1"] .rotator-btn__icon { -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
+.rotator.is-visible .rotator__animation[data-id="2"] .rotator-btn__icon { -webkit-animation-delay: 1.2s; animation-delay: 1.2s; }
+.rotator.is-visible .rotator__animation[data-id="3"] .rotator-btn__icon { -webkit-animation-delay: 1.8s; animation-delay: 1.8s; }
+.rotator__square { fill: #E0E4E7; }
+.rotator-btn__bg { fill: #FFFFFF; }
+.rotator-btn__border { fill: #A1ADB7; }
+.rotator-btn__icon { fill: #627787; }
+.rotator-form__icon { fill: #fff; }
+.rotator-phone__bg, .rotator-phone__box { fill: #FFFFFF; }
+.rotator-phone__border { fill: #627787; }
+.rotator-phone__monitor { fill: #C0C9CF; }
+.rotator-phone__circle, .rotator-phone__line { fill: #A1ADB7; }
+.rotator__arrow { fill: #F3897F; }
+.rotator__arr { width: 57px; height: 57px; position: absolute; top: 92px; left: 195px; -webkit-transform-origin: center center; -ms-transform-origin: center center; transform-origin: center center; }
+.rotator__arr.is-visible { -webkit-animation: rotatePhone 2s linear infinite; animation: rotatePhone 2s linear infinite; }
+
+@-webkit-keyframes rotatePhone { 0% { -webkit-transform: rotate(0); transform: rotate(0); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+@keyframes rotatePhone { 0% { -webkit-transform: rotate(0); transform: rotate(0); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@-webkit-keyframes opacityPhone { 0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; } }
+@keyframes opacityPhone { 0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; } }
 .header { position: relative; padding-top: 45px; z-index: 3; *zoom: 1; }
 .header:after { content: " "; display: table; clear: both; }
 .header__left { float: left; }
