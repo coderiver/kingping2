@@ -647,5 +647,192 @@ $(document).ready(function() {
 		});
 
 	});
+
+	$('.js-offer').each(function() {
+		var item = $(this),
+			offerTop = item.offset(),
+			offerHeight = item.outerHeight();
+
+		// square
+		var square = item.find('.js-offer-square');
+
+		// star
+		var star = item.find('.js-offer-star');
+
+		// circle
+		var circle1 = item.find('.js-offer-circle[data-id="1"]'),
+			circle2 = item.find('.js-offer-circle[data-id="2"]'),
+			circle3 = item.find('.js-offer-circle[data-id="3"]'),
+			circle4 = item.find('.js-offer-circle[data-id="4"]'),
+			circle5 = item.find('.js-offer-circle[data-id="5"]'),
+			circle6 = item.find('.js-offer-circle[data-id="6"]'),
+			circle7 = item.find('.js-offer-circle[data-id="7"]'),
+			circle8 = item.find('.js-offer-circle[data-id="8"]'),
+			circle9 = item.find('.js-offer-circle[data-id="9"]'),
+			circle10 = item.find('.js-offer-circle[data-id="10"]'),
+			circle11 = item.find('.js-offer-circle[data-id="11"]'),
+			circle12 = item.find('.js-offer-circle[data-id="12"]'),
+			circle13 = item.find('.js-offer-circle[data-id="13"]'),
+			circle14 = item.find('.js-offer-circle[data-id="14"]'),
+			circle15 = item.find('.js-offer-circle[data-id="15"]'),
+			circle16 = item.find('.js-offer-circle[data-id="16"]'),
+			circle17 = item.find('.js-offer-circle[data-id="17"]'),
+			circle18 = item.find('.js-offer-circle[data-id="18"]'),
+			circle19 = item.find('.js-offer-circle[data-id="19"]'),
+			circle20 = item.find('.js-offer-circle[data-id="20"]'),
+			circle21 = item.find('.js-offer-circle[data-id="21"]'),
+			circle22 = item.find('.js-offer-circle[data-id="22"]'),
+			circle23 = item.find('.js-offer-circle[data-id="23"]'),
+			circle24 = item.find('.js-offer-circle[data-id="24"]'),
+			circle25 = item.find('.js-offer-circle[data-id="25"]'),
+			circle26 = item.find('.js-offer-circle[data-id="26"]'),
+			circle27 = item.find('.js-offer-circle[data-id="27"]'),
+			circle28 = item.find('.js-offer-circle[data-id="28"]'),
+			circle29 = item.find('.js-offer-circle[data-id="29"]'),
+			circle30 = item.find('.js-offer-circle[data-id="30"]'),
+			circle31 = item.find('.js-offer-circle[data-id="31"]'),
+			circle32 = item.find('.js-offer-circle[data-id="32"]'),
+			circle33 = item.find('.js-offer-circle[data-id="33"]'),
+			circle34 = item.find('.js-offer-circle[data-id="34"]'),
+			circle35 = item.find('.js-offer-circle[data-id="35"]'),
+			circle36 = item.find('.js-offer-circle[data-id="36"]'),
+			circle37 = item.find('.js-offer-circle[data-id="37"]'),
+			circle38 = item.find('.js-offer-circle[data-id="38"]'),
+			circle39 = item.find('.js-offer-circle[data-id="39"]'),
+			circle40 = item.find('.js-offer-circle[data-id="40"]'),
+			circle41 = item.find('.js-offer-circle[data-id="41"]'),
+			circle42 = item.find('.js-offer-circle[data-id="42"]'),
+			circle43 = item.find('.js-offer-circle[data-id="43"]'),
+			circle44 = item.find('.js-offer-circle[data-id="44"]'),
+			circle45 = item.find('.js-offer-circle[data-id="45"]'),
+			circle46 = item.find('.js-offer-circle[data-id="46"]'),
+			circle47 = item.find('.js-offer-circle[data-id="47"]'),
+			circle48 = item.find('.js-offer-circle[data-id="48"]'),
+			circle49 = item.find('.js-offer-circle[data-id="49"]'),
+			circle50 = item.find('.js-offer-circle[data-id="50"]'),
+			circle51 = item.find('.js-offer-circle[data-id="51"]'),
+			circle52 = item.find('.js-offer-circle[data-id="52"]'),
+			circle53 = item.find('.js-offer-circle[data-id="53"]'),
+			circle54 = item.find('.js-offer-circle[data-id="54"]'),
+			circle55 = item.find('.js-offer-circle[data-id="55"]'),
+			circle56 = item.find('.js-offer-circle[data-id="56"]'),
+			circle57 = item.find('.js-offer-circle[data-id="57"]'),
+			circle58 = item.find('.js-offer-circle[data-id="58"]'),
+			circle59 = item.find('.js-offer-circle[data-id="59"]'),
+			circle60 = item.find('.js-offer-circle[data-id="60"]'),
+			circle61 = item.find('.js-offer-circle[data-id="61"]'),
+			circle62 = item.find('.js-offer-circle[data-id="62"]'),
+			circle63 = item.find('.js-offer-circle[data-id="63"]'),
+			circle64 = item.find('.js-offer-circle[data-id="64"]'),
+			circle65 = item.find('.js-offer-circle[data-id="65"]'),
+			circle66 = item.find('.js-offer-circle[data-id="66"]');
+
+		// js-phone
+		var phone = item.find('.js-phone');
+
+		var square1 = item.find('.js-offer-square-2[data-id="1"]'),
+			square2 = item.find('.js-offer-square-2[data-id="2"]'),
+			square3 = item.find('.js-offer-square-2[data-id="3"]'),
+			square4 = item.find('.js-offer-square-2[data-id="4"]'),
+			square5 = item.find('.js-offer-square-2[data-id="5"]'),
+			square6 = item.find('.js-offer-square-2[data-id="6"]'),
+			square7 = item.find('.js-offer-square-2[data-id="7"]'),
+			square8 = item.find('.js-offer-square-2[data-id="8"]'),
+			square9 = item.find('.js-offer-square-2[data-id="9"]'),
+			square10 = item.find('.js-offer-square-2[data-id="10"]'),
+			square11 = item.find('.js-offer-square-2[data-id="11"]');
+
+		//animation
+		var offer = new TimelineMax({ paused: true });
+
+		offer
+			.staggerFrom([square, star], 1, {
+				opacity: 0
+			}, 0.5, 0.5)
+			.staggerFrom([circle1, circle2, circle3, circle4, circle5, circle6, circle7, circle8, circle9,
+				circle10,
+				circle11,
+				circle12,
+				circle13,
+				circle14,
+				circle15,
+				circle16,
+				circle17,
+				circle18,
+				circle19,
+				circle20,
+				circle21,
+				circle22,
+				circle23,
+				circle24,
+				circle25,
+				circle26,
+				circle27,
+				circle28,
+				circle29,
+				circle30,
+				circle31,
+				circle32,
+				circle33,
+				circle34,
+				circle35,
+				circle36,
+				circle37,
+				circle38,
+				circle39,
+				circle40,
+				circle41,
+				circle42,
+				circle43,
+				circle44,
+				circle45,
+				circle46,
+				circle47,
+				circle48,
+				circle49,
+				circle50,
+				circle51,
+				circle52,
+				circle53,
+				circle54,
+				circle55,
+				circle56,
+				circle57,
+				circle58,
+				circle59,
+				circle60,
+				circle61,
+				circle62,
+				circle63,
+				circle64,
+				circle65,
+				circle66], 0.3, {
+				opacity: 0
+			}, 0.08)
+			.from(phone, 1, {
+				opacity: 0
+			}, 7.5)
+			.staggerFrom([square1, square2, square3, square4, square5, 
+				square6, square7, square8, square9, square10, square11], 0.3, {
+				opacity: 0
+			}, 0.15);
+
+		$(window).scroll(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+
+			if (windowTop + windowHeight >= offerTop.top + (offerHeight/2)) {
+				offer.play();
+			};
+		});
+		$(window).load(function() {
+			var windowTop = $(window).scrollTop(),
+				windowHeight = $(window).height();
+			if (windowTop + windowHeight >= offerTop.top + (offerHeight/2)) {
+				offer.play();
+			};
+		});
+
+	});
  
 });

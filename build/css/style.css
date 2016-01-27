@@ -68,6 +68,9 @@ a { text-decoration: none; }
 .field .input { font-size: 16px; color: #777f84; font-family: "GothamPro Regular", Arial, sans-serif; background: none; width: 100%; border: none; border-bottom: 4px solid #d2d4d6; padding: 16px 0; placeholder-color: #fff; }
 .field textarea.input { height: 55px; resize: none; }
 
+.img-mob { display: none; }
+.img-mob img { max-width: 100%; }
+
 .slick-slider { position: relative; display: block; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 
 .slick-list { position: relative; overflow: hidden; display: block; margin: 0; padding: 0; }
@@ -477,6 +480,13 @@ a { text-decoration: none; }
 .campaign__arr-center { width: 25px; top: 86px; left: 17px; }
 .campaign__arr-center.is-visible { -webkit-animation-delay: 1s; animation-delay: 1s; }
 
+.offer .off0 { fill: #F3897F; }
+.offer .off1 { fill: #627787; }
+.offer .off2 { fill: #FFFFFF; }
+.offer .off3 { fill: #C0C9CF; }
+.offer .off4 { fill: #A1ADB7; }
+.offer .off5 { fill: #AFBE96; }
+
 .header { position: relative; padding-top: 45px; z-index: 3; *zoom: 1; }
 .header:after { content: " "; display: table; clear: both; }
 .header__left { float: left; }
@@ -558,8 +568,12 @@ a { text-decoration: none; }
  .about__bottom-panel button{ float: none; margin: 0 auto; }
  .contacts__adress, .contacts__phones{ padding: 46px 50px; } }
 @media only screen and (max-width: 768px){
+ .is-hide-mob{ display: none; }
+ .img-mob{ display: block; }
  .slick-prev, .slick-next{ top: 80px; }
  .toparea__slide{ font-size: 22px; }
+ .gl-market__descr{ margin-bottom: 10px; }
+ .features__list{ padding: 0 20px; }
  .events__inner{ max-width: 400px; width: 80%; padding: 100px 10px; } }
 @media only screen and (max-width: 767px){
  .toparea__inner, .gl-market__inner, .features__inner, .pricing__inner, .comments__inner, .about__inner, .contacts__inner, .footer__inner{ max-width: 400px; }
@@ -604,6 +618,7 @@ a { text-decoration: none; }
  .gl-market__content{ padding-top: 50px; }
  .gl-market__title{ font-size: 25px; }
  .customers__content{ width: 80%; }
+ .comment{ min-width: 280px; }
  .manager{ width: 100%; }
  .contacts__content{ width: 80%; }
  .footer__inner{ text-align: center; }
