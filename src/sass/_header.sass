@@ -10,13 +10,33 @@
 		vertical-align: top
 		width: 206px
 		height: 56px
-		background: url("../img/header-logo.png") no-repeat
-		font-size: 0
+		// background: url("../img/header-logo.png") no-repeat
+		// font-size: 0
 		line-height: 1
 		background-size: cover 
+		padding: 12px 0 11px 65px
+		position: relative
 		+r(480)
 			width: 150px 
-			height: 41px 
+			height: 44px
+			padding: 11px 0 11px 50px
+		i
+			background: url(../img/gm-main.svg) no-repeat center center
+			width: 50px
+			height: 56px
+			position: absolute
+			top: 0
+			left: 0
+			+r(480)
+				width: 40px
+				height: 44px
+		span
+			color: #fff
+			font-size: 33px
+			+med
+			letter-spacing: -0.025em 
+			+r(480)
+				font-size: 22px
 	&__right	
 		float: right
 		margin-right: 30px 
@@ -143,11 +163,28 @@
 		&:hover
 			opacity: 0.7
 		&.fb		
-			+s(menu_fb)
+			// +s(menu_fb)
+			a 
 		&.tw
-			+s(menu_tw)
+			// +s(menu_tw)
+			a 
 		&.in
-			+s(menu_in)
+			// +s(menu_in)
+			a 
+		a
+			display: block
+			width: 32px
+			height: 32px
+			border-radius: 50%
+			line-height: 32px
+			font-size: 15px
+			text-align: center
+			background: #354b5a
+			color: #fff
+			i
+				margin-top: 8px
+				vertical-align: top
+				
 	.menu__copyrights
 		font-size: 13px
 		color: #49545B 

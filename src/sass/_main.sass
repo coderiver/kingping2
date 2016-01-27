@@ -401,7 +401,7 @@
 		width: 73px
 		height: 81px 
 		margin-left: -36px 
-		background: url("../img/logo2.png") no-repeat
+		background: url("../img/gm-main.svg") no-repeat
 	&__inner	
 		@extend %in
 	&__bottom-panel
@@ -504,14 +504,29 @@
 		display: inline-block
 		text-decoration: none 
 		margin-right: 5px 
+		background: #f6a79f
+		border-radius: 50%
+		width: 32px
+		height: 32px
+		text-align: center
+		line-height: 32px
+		color: #fff
 		&:last-child
 			margin-right: 0 
 		&:hover
 			opacity: .7 
 		&.in
-			+s(in)
+			// +s(in)
+			i
+				font-size: 15px
+				margin-bottom: 1px
 		&.mail
-			+s(mail)
+			// +s(mail)
+			i
+				font-size: 11px
+		i
+			vertical-align: middle
+			
 
 //events
 .events
@@ -805,7 +820,7 @@
 		+r(767)
 			padding: 40px 0 0 
 		.btn_perl
-			margin: 0 
+			margin: 0 auto
 			+r(767)
 				margin: 0 auto 
 	&__row
@@ -845,12 +860,22 @@
 			display: inline-block
 			width: 42px
 			height: 42px
-			background-color: #FFF
+			background-color: #d2d4d6
 			border-radius: 50%
+			color: #fff
+			line-height: 42px
+			text-align: center
 			&.is-fb
-				+s(footer-fb)
+				// +s(footer-fb)
+				i 
+					font-size: 18px
 			&.is-in
-				+s(footer-in)
+				// +s(footer-in)
+				i 
+					font-size: 18px
+			i
+				vertical-align: middle
+				
 	.copyrights
 		font-size: 13px 
 		line-height: 40px
